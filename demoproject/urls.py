@@ -18,10 +18,10 @@ from customer.models import customer
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
-# from django.urls.conf import settings
+from django.urls.conf import settings
 from django.http.response import HttpResponse
-# from django.views.static import serve
-# from django.conf.urls.static import static, url 
+from django.views.static import serve
+from django.conf.urls.static import static, url 
 # base url=http://127.0.0.1:8000/
 # def mainproject(r):
 #     resp=HttpResponse("This is our main page---MokshiLAla")
@@ -34,6 +34,6 @@ urlpatterns = [
     path('login/',registerView),
      path('',homeView),
      path('emp/',addemp),
-    # url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
